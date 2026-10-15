@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0c0d0f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Melinda's Style Boutique Hair Salon | Phoenix, AZ (Baseline Crossings)</title>
+  <meta name="description" content="Melinda's Style Boutique Hair & Barber Salon in Phoenix, AZ 85041. 4.9 Star rated multicultural salon specializing in Silk Press, Knotless Braids, Weaves, Custom Color & Barbering. Black-owned & Women-owned.">
+  <meta name="keywords" content="Melinda's Style Boutique, Hair Salon Phoenix AZ, Silk Press Phoenix, Knotless Braids Phoenix, Baseline Crossings salon, Black owned hair salon Phoenix, Barber Phoenix AZ">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Melinda's Style Boutique Hair Salon | Phoenix, AZ">
+  <meta property="og:description" content="Phoenix's premier multicultural boutique hair & barber salon. 4.9 Stars on Google. Book your luxury hair experience today!">
+  <meta property="og:image" content="assets/hero_salon.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org JSON-LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Melinda's Style Boutique Hair Salon",
+    "image": "assets/hero_salon.jpg",
+    "telephone": "+16022774960",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2640 W Baseline Rd #105",
+      "addressLocality": "Phoenix",
+      "addressRegion": "AZ",
+      "postalCode": "85041",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.3783,
+      "longitude": -112.1158
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    },
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================================================================
+       TOP ANNOUNCEMENT / REAL-TIME STATUS BAR
+       =================================================================== -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="container announcement-inner">
+      <div class="announcement-items">
+        <div class="announcement-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>2640 W Baseline Rd #105, Phoenix, AZ (Baseline Crossings LLC)</span>
+        </div>
+        <div class="announcement-item" id="liveHoursContainer">
+          <div class="status-badge" id="liveStatusBadge">
+            <span class="pulse-dot"></span>
+            <span id="liveStatusText">Checking Salon Hours...</span>
+          </div>
+          <span style="font-size: 0.78rem; color: #8d909b;">(Phoenix Local Time)</span>
+        </div>
+      </div>
+      <div class="announcement-right">
+        <a href="tel:+16022774960" class="announcement-link">
+          <i class="fa-solid fa-phone"></i>
+          <span>(602) 277-4960</span>
+        </a>
+        <span style="color: rgba(255,255,255,0.15);">|</span>
+        <a href="#booking" class="announcement-link" style="color: var(--primary-gold-light);">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Instant Booking</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Top Sub-bar (Visible only on mobile devices) -->
+  <div class="mobile-status-strip">
+    <div class="mobile-status-pill" id="mobileStatusPill">
+      <span class="pulse-dot"></span>
+      <span id="mobileStatusText">Loading Hours...</span>
+    </div>
+    <a href="https://maps.google.com/?q=2640+W+Baseline+Rd+%23105,+Phoenix,+AZ+85041" target="_blank" rel="noopener noreferrer" class="mobile-loc-tag">
+      <i class="fa-solid fa-map-pin"></i> Baseline Crossings
+    </a>
+  </div>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ===================================================================
+       HEADER & NAVIGATION
+       =================================================================== -->
+  <header class="main-header" id="mainHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="brand-logo" aria-label="Melinda's Style Boutique Home">
+          <div class="brand-title">
+            <span class="script">Melinda's</span>
+            <span>Style Boutique</span>
+          </div>
+          <span class="brand-subtitle">Hair & Barber Salon · Phoenix, AZ</span>
+        </a>
+
+        <!-- Navigation Menu / Mobile Drawer -->
+        <div class="nav-menu" id="navMenu">
+          <div class="mobile-drawer-header">
+            <div class="brand-title">
+              <span class="script">Melinda's</span>
+              <span>Style Boutique</span>
+            </div>
+            <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+          </div>
+
+          <ul class="nav-links-list">
+            <li><a href="#services" class="nav-link"><i class="fa-solid fa-scissors"></i><span>Services & Pricing</span></a></li>
+            <li><a href="#about" class="nav-link"><i class="fa-solid fa-heart"></i><span>About Melinda</span></a></li>
+            <li><a href="#gallery" class="nav-link"><i class="fa-solid fa-camera"></i><span>Transformations</span></a></li>
+            <li><a href="#reviews" class="nav-link"><i class="fa-solid fa-star"></i><span>Reviews (4.9 ★)</span></a></li>
+            <li><a href="#location" class="nav-link"><i class="fa-solid fa-location-dot"></i><span>Hours & Location</span></a></li>
+            <li><a href="#faq" class="nav-link"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a></li>
+          </ul>
+
+          <div class="mobile-drawer-footer">
+            <a href="tel:+16022774960" class="btn btn-secondary btn-sm" style="width: 100%;">
+              <i class="fa-solid fa-phone"></i>
+              <span>Call (602) 277-4960</span>
+            </a>
+            <a href="#booking" class="btn btn-primary btn-sm drawer-book-btn" style="width: 100%;">
+              <i class="fa-solid fa-sparkles"></i>
+              <span>Book Appointment</span>
+            </a>
+            <div class="drawer-socials">
+              <a href="https://www.instagram.com/melindasstylebtq/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.facebook.com/p/Melindas-Style-Boutique-Hair-and-Barber-Salon-100057077692121/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://maps.google.com/?q=Melinda's+Style+Boutique+Hair+Salon+Phoenix+AZ" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-actions">
+          <a href="tel:+16022774960" class="btn btn-secondary btn-sm" title="Call Salon">
+            <i class="fa-solid fa-phone"></i>
+            <span>(602) 277-4960</span>
+          </a>
+          <a href="#booking" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-sparkles"></i>
+            <span>Book Appointment</span>
+          </a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       HERO SECTION
+       =================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          
+          <!-- Rating badge from Screenshot -->
+          <div class="hero-rating-pill">
+            <svg class="google-icon-svg" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="rating-number">4.9</span>
+            <span class="rating-reviews">(127 Verified Google Reviews)</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Where Elegance Meets <span class="gold-text">Hair Mastery</span> & True Confidence.
+          </h1>
+
+          <p class="hero-lead">
+            Welcome to <strong>Melinda's Style Boutique Hair Salon</strong> — Phoenix's premier destination for exquisite silk presses, protective knotless braids, flawless weaves, vibrant hair coloring, and precision barbering for all hair textures.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#booking" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Book Appointment</span>
+            </a>
+            <a href="#services" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-scissors"></i>
+              <span>Explore Services</span>
+            </a>
+          </div>
+
+          <div class="hero-quick-features">
+            <div class="quick-feature-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Multicultural Specialists</span>
+            </div>
+            <div class="quick-feature-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Walk-ins & Appointments</span>
+            </div>
+            <div class="quick-feature-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Baseline Crossings LLC</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Card with Google Profile Badges from Image -->
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-subtitle">Verified Google Business Profile</div>
+            <h3 class="hero-card-title">Melinda's Style Boutique</h3>
+          </div>
+
+          <div class="badge-grid-list">
+            <div class="badge-feature-row">
+              <span class="badge-feature-icon">🤎</span>
+              <div class="badge-feature-text">
+                <h4>Identifies as Black-Owned</h4>
+                <p>Rooted in community pride and exceptional textured hair care</p>
+              </div>
+            </div>
+
+            <div class="badge-feature-row">
+              <span class="badge-feature-icon">💜</span>
+              <div class="badge-feature-text">
+                <h4>Identifies as Women-Owned</h4>
+                <p>Founded and operated by Master Stylist Melinda</p>
+              </div>
+            </div>
+
+            <div class="badge-feature-row">
+              <span class="badge-feature-icon">🏳️‍🌈</span>
+              <div class="badge-feature-text">
+                <h4>LGBTQ+ Friendly</h4>
+                <p>An inclusive, welcoming and uplifting safe space for everyone</p>
+              </div>
+            </div>
+
+            <div class="badge-feature-row">
+              <span class="badge-feature-icon">♿</span>
+              <div class="badge-feature-text">
+                <h4>Wheelchair Accessible</h4>
+                <p>Step-free accessible entrance, styling stations and restrooms</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card-quick-call">
+            <div class="quick-call-info">
+              <span>Direct Booking Line</span>
+              <strong>(602) 277-4960</strong>
+            </div>
+            <a href="tel:+16022774960" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-phone"></i>
+              <span>Call Now</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       IDENTITY & VALUE STRIP (4 HIGHLIGHTS FROM IMAGE)
+       =================================================================== */ -->
+  <section class="identity-strip">
+    <div class="container">
+      <div class="identity-grid">
+        <div class="identity-card">
+          <div class="identity-icon-wrap" style="color: #c084fc;">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <div class="identity-info">
+            <h3>Black & Women Owned</h3>
+            <p>15+ years passionate salon dedication</p>
+          </div>
+        </div>
+
+        <div class="identity-card">
+          <div class="identity-icon-wrap" style="color: #60a5fa;">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="identity-info">
+            <h3>4.9 Star Excellence</h3>
+            <p>Over 127 verified Google client reviews</p>
+          </div>
+        </div>
+
+        <div class="identity-card">
+          <div class="identity-icon-wrap" style="color: #34d399;">
+            <i class="fa-solid fa-universal-access"></i>
+          </div>
+          <div class="identity-info">
+            <h3>Full Accessibility</h3>
+            <p>Wheelchair friendly & welcoming atmosphere</p>
+          </div>
+        </div>
+
+        <div class="identity-card">
+          <div class="identity-icon-wrap" style="color: #f59e0b;">
+            <i class="fa-solid fa-spa"></i>
+          </div>
+          <div class="identity-info">
+            <h3>All Hair Textures</h3>
+            <p>Silk press, braids, curls & precision fades</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SERVICES & PRICING MENU
+       =================================================================== -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-sparkles"></i>
+          Signature Offerings
+        </span>
+        <h2 class="section-title">Luxury Hair Styling & <span>Barber Services</span></h2>
+        <p class="section-subtitle">
+          From healthy natural hair rejuvenation to breathtaking protective styling and clean cuts. Every session is personalized for your unique lifestyle and crown.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="services-filter-nav">
+        <button class="filter-btn active" data-filter="all">All Services</button>
+        <button class="filter-btn" data-filter="natural">Silk Press & Natural</button>
+        <button class="filter-btn" data-filter="braids">Braids & Weaves</button>
+        <button class="filter-btn" data-filter="color">Color & Chemical</button>
+        <button class="filter-btn" data-filter="barber">Barbering & Cuts</button>
+        <button class="filter-btn" data-filter="treatment">Scalp & Spa</button>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="services-grid" id="servicesGrid">
+
+        <!-- Service 1: Silk Press -->
+        <div class="service-card featured-card" data-category="natural">
+          <span class="service-badge">Client Favorite</span>
+          <div class="service-img-wrapper">
+            <img src="assets/service_silkpress.jpg" alt="Signature Silk Press & Blowout" loading="lazy">
+            <div class="service-img-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-header-row">
+              <h3 class="service-title">Signature Silk Press & Hydration</h3>
+              <span class="service-price">From $75</span>
+            </div>
+            <div class="service-meta">
+              <span class="service-meta-item"><i class="fa-regular fa-clock"></i> 90 - 120 mins</span>
+              <span class="service-meta-item"><i class="fa-solid fa-fire-burner"></i> Heat Protected</span>
+            </div>
+            <p class="service-desc">
+              Deep clarifying wash, intensive steam hydration conditioning, precision trim, and flawless silk wrap press with mirror-like shine and weightless movement.
+            </p>
+            <div class="service-perks">
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Includes Scalp Detox & Steam</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Zero Chemical Damage</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Featherlight Natural Finish</div>
+            </div>
+            <button class="btn btn-outline-gold service-action-btn select-service-btn" data-service="Signature Silk Press & Hydration" data-price="75">
+              <span>Book This Service</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 2: Knotless Braids -->
+        <div class="service-card featured-card" data-category="braids">
+          <span class="service-badge">Trending</span>
+          <div class="service-img-wrapper">
+            <img src="assets/service_braids.jpg" alt="Knotless Box Braids" loading="lazy">
+            <div class="service-img-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-header-row">
+              <h3 class="service-title">Knotless Box Braids</h3>
+              <span class="service-price">From $180</span>
+            </div>
+            <div class="service-meta">
+              <span class="service-meta-item"><i class="fa-regular fa-clock"></i> 3 - 5 hrs</span>
+              <span class="service-meta-item"><i class="fa-solid fa-feather"></i> Tension-Free</span>
+            </div>
+            <p class="service-desc">
+              Painless, flexible, and scalp-healthy protective styling. Clean geometric parting with high-grade pre-stretched braiding hair tailored to your chosen length.
+            </p>
+            <div class="service-perks">
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Scalp-Nourishing Oil Application</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Dipped & Sealed Ends</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Long-lasting 6 to 8 weeks</div>
+            </div>
+            <button class="btn btn-outline-gold service-action-btn select-service-btn" data-service="Knotless Box Braids" data-price="180">
+              <span>Book This Service</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 3: Custom Color & Highlights -->
+        <div class="service-card" data-category="color">
+          <div class="service-img-wrapper">
+            <img src="assets/service_color.jpg" alt="Custom Hair Color & Balayage" loading="lazy">
+            <div class="service-img-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-header-row">
+              <h3 class="service-title">Custom Balayage & Vivid Color</h3>
+              <span class="service-price">From $135</span>
+            </div>
+            <div class="service-meta">
+              <span class="service-meta-item"><i class="fa-regular fa-clock"></i> 2 - 3 hrs</span>
+              <span class="service-meta-item"><i class="fa-solid fa-palette"></i> Bond Builder</span>
+            </div>
+            <p class="service-desc">
+              Personalized color formulation ranging from rich warm chestnuts, honey blondes, to vibrant fantasy tones, all with bond-repair treatments for ultimate integrity.
+            </p>
+            <div class="service-perks">
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Complimentary Color Consultation</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Bond-strengthening Olaplex Infusion</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Gloss Toner & UV Sealant</div>
+            </div>
+            <button class="btn btn-outline-gold service-action-btn select-service-btn" data-service="Custom Balayage & Vivid Color" data-price="135">
+              <span>Book This Service</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 4: Sew-ins & Weaves -->
+        <div class="service-card" data-category="braids">
+          <div class="service-img-wrapper">
+            <img src="assets/service_weaves.jpg" alt="Sew-in Extensions & Weaves" loading="lazy">
+            <div class="service-img-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-header-row">
+              <h3 class="service-title">Luxury Sew-In & Extension Install</h3>
+              <span class="service-price">From $160</span>
+            </div>
+            <div class="service-meta">
+              <span class="service-meta-item"><i class="fa-regular fa-clock"></i> 2.5 hrs</span>
+              <span class="service-meta-item"><i class="fa-solid fa-layer-group"></i> Seamless Blend</span>
+            </div>
+            <p class="service-desc">
+              Expert foundation braid pattern, protective net application, flat sew-in technique, followed by precision layer cutting and hot tool styling for seamless blending.
+            </p>
+            <div class="service-perks">
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Secure Flat Base Pattern</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Custom Cut & Heat Styling</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Closure or Leave-out Options</div>
+            </div>
+            <button class="btn btn-outline-gold service-action-btn select-service-btn" data-service="Luxury Sew-In & Extension Install" data-price="160">
+              <span>Book This Service</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 5: Barber Cut & Fade -->
+        <div class="service-card" data-category="barber">
+          <div class="service-img-wrapper">
+            <img src="assets/service_barber.jpg" alt="Barber Cut, Fade & Beard Sculpt" loading="lazy">
+            <div class="service-img-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-header-row">
+              <h3 class="service-title">Precision Fade & Beard Sculpt</h3>
+              <span class="service-price">From $45</span>
+            </div>
+            <div class="service-meta">
+              <span class="service-meta-item"><i class="fa-regular fa-clock"></i> 45 mins</span>
+              <span class="service-meta-item"><i class="fa-solid fa-razor"></i> Razor Finish</span>
+            </div>
+            <p class="service-desc">
+              Master barbering cut with crisp lineup, skin taper or shadow fade, hot lather straight razor edge-up, hot towel service, and soothing beard conditioning.
+            </p>
+            <div class="service-perks">
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Hot Towel & Essential Oils</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Crisp Straight-Razor Line</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Beard Oil & Balm Styling</div>
+            </div>
+            <button class="btn btn-outline-gold service-action-btn select-service-btn" data-service="Precision Fade & Beard Sculpt" data-price="45">
+              <span>Book This Service</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 6: Scalp Detox & Steam Therapy -->
+        <div class="service-card" data-category="treatment">
+          <div class="service-img-wrapper">
+            <img src="assets/service_treatment.jpg" alt="Scalp Detox & Steam Therapy" loading="lazy">
+            <div class="service-img-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-header-row">
+              <h3 class="service-title">Deep Scalp Detox & Steam Therapy</h3>
+              <span class="service-price">From $60</span>
+            </div>
+            <div class="service-meta">
+              <span class="service-meta-item"><i class="fa-regular fa-clock"></i> 60 mins</span>
+              <span class="service-meta-item"><i class="fa-solid fa-droplet"></i> Intense Moisture</span>
+            </div>
+            <p class="service-desc">
+              Rejuvenate dry scalp and stimulate follicular health with exfoliating tea tree scrub, ozone vapor steam infusion, and nutrient-dense botanical mask treatment.
+            </p>
+            <div class="service-perks">
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Removes Buildup & Itchiness</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Restores Natural Moisture Barrier</div>
+              <div class="service-perk"><i class="fa-solid fa-check"></i> Relaxing Shiatsu Head Massage</div>
+            </div>
+            <button class="btn btn-outline-gold service-action-btn select-service-btn" data-service="Deep Scalp Detox & Steam Therapy" data-price="60">
+              <span>Book This Service</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick note for custom consultations -->
+      <div style="text-align: center; margin-top: 48px; color: var(--text-muted); font-size: 0.95rem;">
+        Need a personalized bridal package, loc maintenance, or custom service? 
+        <a href="tel:+16022774960" style="color: var(--primary-gold-light); font-weight: 700; text-decoration: underline; margin-left: 6px;">
+          Call Melinda directly at (602) 277-4960
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       ABOUT MELINDA & THE BOUTIQUE STORY
+       =================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        
+        <div class="about-img-column">
+          <div class="about-img-main">
+            <img src="assets/melinda_stylist.jpg" alt="Master Stylist Melinda - Founder of Melinda's Style Boutique" loading="lazy">
+          </div>
+          <div class="about-floating-experience">
+            <div class="experience-number">15+</div>
+            <div class="experience-text">
+              Years of Hair Artistry<br>& Community Trust
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content-column">
+          <span class="section-tag">
+            <i class="fa-solid fa-heart"></i>
+            Meet The Master Stylist
+          </span>
+          <h2 class="section-title">Melinda's <span>Passion</span> For Beautiful, Healthy Crowns</h2>
+
+          <div class="about-signature-quote">
+            "Your hair is your crowning glory. My goal is to ensure you walk out of our boutique feeling empowered, radiant, and deeply cared for."
+          </div>
+
+          <p>
+            At <strong>Melinda's Style Boutique Hair and Barber Salon</strong>, beauty is more than just styling — it is an art of transformation, self-care, and celebration of individuality. Located conveniently at <strong>Baseline Crossings in Phoenix, AZ</strong>, Melinda has built a warm, inclusive sanctuary welcoming all cultures and textures.
+          </p>
+
+          <p>
+            Whether you are preserving your natural curls with our signature moisture-locking silk press, elevating your daily look with protective knotless braids, or enjoying a precision scissor cut and barbering fade, Melinda brings over 15 years of seasoned expertise with unmatched attention to detail.
+          </p>
+
+          <div class="about-highlights-grid">
+            <div class="about-highlight-box">
+              <div class="highlight-title">
+                <i class="fa-solid fa-leaf"></i>
+                <span>Healthy Hair First</span>
+              </div>
+              <p>We prioritize your scalp and strand integrity over quick shortcuts using premium nourishing products.</p>
+            </div>
+
+            <div class="about-highlight-box">
+              <div class="highlight-title">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <span>Welcoming Atmosphere</span>
+              </div>
+              <p>An LGBTQ+ safe space, fully wheelchair accessible, and designed for comfort and peace.</p>
+            </div>
+          </div>
+
+          <div class="about-footer-row">
+            <div>
+              <div class="stylist-signature">Melinda</div>
+              <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Founder & Master Stylist</span>
+            </div>
+            <a href="#booking" class="btn btn-primary">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Book With Melinda</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       TRANSFORMATION GALLERY / LOOKBOOK
+       =================================================================== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-camera"></i>
+          Lookbook Portfolio
+        </span>
+        <h2 class="section-title">Client <span>Transformations</span></h2>
+        <p class="section-subtitle">
+          Real results crafted right in our styling chairs. Click any photo to expand into high resolution view.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Gallery 1 -->
+        <div class="gallery-item" data-full="assets/gallery_1.jpg" data-title="Glossy Rich Silk Press" data-desc="Natural hair heat-trained with deep steam therapy & mirror sheen">
+          <img src="assets/gallery_1.jpg" alt="Client Silk Press Transformation" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Silk Press</span>
+            <h4 class="gallery-title">Glossy Silk Wrap</h4>
+            <p class="gallery-desc">Full body and silky motion</p>
+            <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+        </div>
+
+        <!-- Gallery 2 -->
+        <div class="gallery-item" data-full="assets/gallery_2.jpg" data-title="Warm Honey Balayage" data-desc="Seamless hand-painted dimensional highlights on textured hair">
+          <img src="assets/gallery_2.jpg" alt="Balayage Color Transformation" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Color Artistry</span>
+            <h4 class="gallery-title">Honey Caramel Balayage</h4>
+            <p class="gallery-desc">Dimensional warmth with bond-repair</p>
+            <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+        </div>
+
+        <!-- Gallery 3 -->
+        <div class="gallery-item" data-full="assets/gallery_3.jpg" data-title="Clean Knotless Braids" data-desc="Scalp-protective knotless parting with golden accessory cuffs">
+          <img src="assets/gallery_3.jpg" alt="Protective Braids Styling" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Protective Styling</span>
+            <h4 class="gallery-title">Mid-Back Knotless Braids</h4>
+            <p class="gallery-desc">Featherweight, painless & sleek</p>
+            <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+        </div>
+
+        <!-- Gallery 4 -->
+        <div class="gallery-item" data-full="assets/gallery_4.jpg" data-title="Luxe Bouncy Blowout" data-desc="Defined volume and soft face-framing layers">
+          <img src="assets/gallery_4.jpg" alt="Voluminous Blowout and Style" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Styling & Cut</span>
+            <h4 class="gallery-title">Voluminous Layered Cut</h4>
+            <p class="gallery-desc">Textured layers with long-lasting bounce</p>
+            <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+        </div>
+
+        <!-- Gallery 5 -->
+        <div class="gallery-item" data-full="assets/gallery_5.jpg" data-title="Seamless Sew-In Weave" data-desc="Virgin hair extension installment with natural leave-out">
+          <img src="assets/gallery_5.jpg" alt="Seamless Sew-In Weave" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Extensions</span>
+            <h4 class="gallery-title">Full Body Sew-In Install</h4>
+            <p class="gallery-desc">Flawless blend and undetectable base</p>
+            <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+        </div>
+
+        <!-- Gallery 6 -->
+        <div class="gallery-item" data-full="assets/gallery_6.jpg" data-title="Crisp Barber Taper Fade" data-desc="Precision skin fade and razor-sharp beard grooming">
+          <img src="assets/gallery_6.jpg" alt="Barber Fade and Lineup" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Barbering</span>
+            <h4 class="gallery-title">Mid-Taper Fade & Edge</h4>
+            <p class="gallery-desc">Razor sharp finish with hot towel care</p>
+            <div class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       GOOGLE REVIEWS & TESTIMONIALS (4.9 STARS / 127 REVIEWS)
+       =================================================================== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-star"></i>
+          Client Praise
+        </span>
+        <h2 class="section-title">Loved by Phoenix: <span>4.9 Star Rating</span></h2>
+        <p class="section-subtitle">
+          Over 127 verified Google reviews speak to the warmth, patience, and remarkable results our clients experience each visit.
+        </p>
+      </div>
+
+      <!-- Google Rating Summary Breakdown -->
+      <div class="reviews-summary-card">
+        <div class="reviews-score-block">
+          <div class="score-big">4.9</div>
+          <div class="score-details">
+            <h4>Exceptional Rating</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>Based on 127+ Google Reviews</p>
+          </div>
+        </div>
+
+        <div class="reviews-breakdown">
+          <div class="rating-bar-row">
+            <span>5 Stars</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 95%;"></div></div>
+            <span>95%</span>
+          </div>
+          <div class="rating-bar-row">
+            <span>4 Stars</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 5%;"></div></div>
+            <span>5%</span>
+          </div>
+          <div class="rating-bar-row">
+            <span>3 Stars</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+            <span>0%</span>
+          </div>
+        </div>
+
+        <div class="reviews-cta-block">
+          <a href="https://maps.google.com/?q=Melinda's+Style+Boutique+Hair+Salon+Phoenix+AZ" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            <i class="fa-brands fa-google"></i>
+            <span>Read All on Google</span>
+          </a>
+          <span style="font-size: 0.78rem; color: var(--text-light);"><i class="fa-solid fa-shield-check"></i> 100% Verified Reviews</span>
+        </div>
+      </div>
+
+      <!-- Reviews Cards Grid -->
+      <div class="reviews-grid">
+        
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div>
+            <div class="review-card-top">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="verified-google"><i class="fa-brands fa-google"></i> Verified Client</span>
+            </div>
+            <span class="review-service-pill">Silk Press & Steam Hydration</span>
+            <p class="review-text">
+              "Melinda is an absolute magician with natural hair! My silk press lasted three whole weeks without reverting even with Arizona heat. Her salon is clean, peaceful, and she treats every customer with such royal dignity. I wouldn't trust anyone else with my hair!"
+            </p>
+          </div>
+          <div class="reviewer-profile">
+            <div class="reviewer-avatar">K</div>
+            <div class="reviewer-meta">
+              <h5>Keisha Washington</h5>
+              <span>Phoenix, AZ · 3 months ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div>
+            <div class="review-card-top">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="verified-google"><i class="fa-brands fa-google"></i> Verified Client</span>
+            </div>
+            <span class="review-service-pill">Knotless Box Braids</span>
+            <p class="review-text">
+              "Found Melinda through Google because of her high rating and she blew away my expectations. Zero tension on my edges, parting is mathematically perfect, and the boutique atmosphere is so positive and welcoming. Truly a safe, loving space!"
+            </p>
+          </div>
+          <div class="reviewer-profile">
+            <div class="reviewer-avatar">T</div>
+            <div class="reviewer-meta">
+              <h5>Tamara Reynolds</h5>
+              <span>Laveen, AZ · 1 month ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div>
+            <div class="review-card-top">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="verified-google"><i class="fa-brands fa-google"></i> Verified Client</span>
+            </div>
+            <span class="review-service-pill">Barber Fade & Cut</span>
+            <p class="review-text">
+              "The barbering here is second to none. Crisp skin fade and hot lather razor line. Wheelchair accessible, plenty of parking right at Baseline Crossings, and Melinda always greets you with a warm smile. 10/10 recommendation!"
+            </p>
+          </div>
+          <div class="reviewer-profile">
+            <div class="reviewer-avatar">M</div>
+            <div class="reviewer-meta">
+              <h5>Marcus Johnson</h5>
+              <span>Phoenix, AZ · 4 weeks ago</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       APPOINTMENT BOOKING & PRICE ESTIMATOR
+       =================================================================== -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="booking-wrapper">
+        
+        <!-- Left Sidebar -->
+        <div class="booking-sidebar">
+          <div>
+            <div class="booking-sidebar-header">
+              <span class="section-tag"><i class="fa-solid fa-calendar"></i> Reserve</span>
+              <h3>Book Your Salon Visit</h3>
+              <p>Choose your preferred service, select an open slot, and Melinda's team will confirm your consultation.</p>
+            </div>
+
+            <div class="booking-policy-list">
+              <div class="booking-policy-item">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <div>
+                  <strong>Prompt Appointments</strong>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">Please arrive 5-10 minutes prior to relax and prep.</p>
+                </div>
+              </div>
+
+              <div class="booking-policy-item">
+                <i class="fa-solid fa-shield-heart"></i>
+                <div>
+                  <strong>All Hair Textures Welcome</strong>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">From 1A straight to 4C coils, we customize every formula.</p>
+                </div>
+              </div>
+
+              <div class="booking-policy-item">
+                <i class="fa-solid fa-wheelchair"></i>
+                <div>
+                  <strong>Accessibility Assured</strong>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">Level entry and comfortable stations for all guests.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-contact-card">
+            <p>Prefer to speak on the phone?</p>
+            <a href="tel:+16022774960">
+              <i class="fa-solid fa-phone"></i>
+              <span>(602) 277-4960</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Form -->
+        <div class="booking-form-area">
+          <form id="appointmentForm">
+            
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="clientName">Full Name <span class="req">*</span></label>
+                <input type="text" id="clientName" class="form-control" placeholder="e.g. Maya Jenkins" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="clientPhone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="clientPhone" class="form-control" placeholder="(602) 000-0000" required>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="clientEmail">Email Address</label>
+                <input type="email" id="clientEmail" class="form-control" placeholder="name@example.com">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="serviceSelect">Select Service <span class="req">*</span></label>
+                <select id="serviceSelect" class="form-control" required>
+                  <option value="" data-price="0">-- Choose a Service --</option>
+                  <option value="Signature Silk Press & Hydration" data-price="75">Signature Silk Press & Hydration ($75+)</option>
+                  <option value="Knotless Box Braids" data-price="180">Knotless Box Braids ($180+)</option>
+                  <option value="Custom Balayage & Vivid Color" data-price="135">Custom Balayage & Vivid Color ($135+)</option>
+                  <option value="Luxury Sew-In & Extension Install" data-price="160">Luxury Sew-In & Extension Install ($160+)</option>
+                  <option value="Precision Fade & Beard Sculpt" data-price="45">Precision Fade & Beard Sculpt ($45+)</option>
+                  <option value="Deep Scalp Detox & Steam Therapy" data-price="60">Deep Scalp Detox & Steam Therapy ($60+)</option>
+                  <option value="Hair Cut & Style Consultation" data-price="50">Hair Cut & Style Consultation ($50+)</option>
+                  <option value="Other / Custom Service" data-price="0">Other / Custom Service</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="bookDate">Preferred Date <span class="req">*</span></label>
+                <input type="date" id="bookDate" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="bookTime">Preferred Time <span class="req">*</span></label>
+                <select id="bookTime" class="form-control" required>
+                  <option value="">-- Select Time Slot --</option>
+                  <option value="09:00 AM">09:00 AM (Opening Slot)</option>
+                  <option value="10:30 AM">10:30 AM</option>
+                  <option value="12:00 PM">12:00 PM (Noon)</option>
+                  <option value="01:30 PM">01:30 PM</option>
+                  <option value="03:00 PM">03:00 PM</option>
+                  <option value="04:30 PM">04:30 PM (Evening Slot)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="clientNotes">Hair Length, Texture or Special Requests</label>
+              <textarea id="clientNotes" class="form-control" placeholder="Tell Melinda about your current hair status, whether you need takedown, or any inspiration ideas..."></textarea>
+            </div>
+
+            <!-- Price Estimator Box -->
+            <div class="booking-price-estimator">
+              <div>
+                <span class="est-label">Estimated Starting Investment:</span>
+                <div style="font-size: 0.78rem; color: var(--text-light);">Final quote confirmed upon hair assessment</div>
+              </div>
+              <div class="est-val" id="estimatedPriceDisplay">$0.00</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Confirm & Request Appointment</span>
+            </button>
+
+          </form>
+
+          <div class="booking-success-box" id="bookingSuccessBox">
+            <i class="fa-solid fa-circle-check"></i>
+            <h4>Appointment Request Received!</h4>
+            <p>Thank you, <span id="confName" style="font-weight: 700; color: #fff;"></span>! Melinda's Style Boutique has logged your reservation for <span id="confService" style="color: var(--primary-gold-light); font-weight: 700;"></span> on <span id="confDateTime" style="font-weight: 700; color: #fff;"></span>.</p>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">Reference Code: <strong style="color: var(--primary-gold);" id="confRefCode">MSB-8291</strong>. We will call/text you at your number to confirm!</div>
+            <button class="btn btn-secondary btn-sm" id="resetBookingBtn">Book Another Session</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       LOCATION, HOURS & MAP SECTION (DIRECT DETAILS FROM SCREENSHOT)
+       =================================================================== -->
+  <section class="location-section" id="location">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-map-pin"></i>
+          Find The Boutique
+        </span>
+        <h2 class="section-title">Visit Our <span>Phoenix Salon</span></h2>
+        <p class="section-subtitle">
+          Located inside Baseline Crossings LLC with abundant free parking, wheelchair accessibility, and a welcoming team ready to serve you.
+        </p>
+      </div>
+
+      <div class="location-grid">
+        
+        <!-- Info Panel from Screenshot -->
+        <div class="location-info-panel">
+          <div>
+            <div class="location-card-header">
+              <h3>Melinda's Style Boutique</h3>
+              <p class="complex-name"><i class="fa-solid fa-building"></i> Located in: Baseline Crossings LLC</p>
+            </div>
+
+            <div class="location-details-list">
+              <!-- Detail 1: Address -->
+              <div class="loc-detail-row">
+                <div class="loc-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="loc-detail-content">
+                  <h5>Physical Address</h5>
+                  <p>2640 W Baseline Rd #105, Phoenix, AZ 85041, United States</p>
+                  <a href="https://maps.google.com/?q=2640+W+Baseline+Rd+%23105,+Phoenix,+AZ+85041" target="_blank" rel="noopener noreferrer" style="font-size: 0.82rem; color: var(--primary-gold); font-weight: 600; display: inline-flex; align-items: center; gap: 4px; margin-top: 4px;">
+                    <span>Open in Google Maps</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Detail 2: Phone -->
+              <div class="loc-detail-row">
+                <div class="loc-detail-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="loc-detail-content">
+                  <h5>Phone & Booking Lines</h5>
+                  <p><a href="tel:+16022774960">+1 602-277-4960 (Salon Desk)</a></p>
+                  <p><a href="tel:+16026927170">+1 602-692-7170 (Direct Appointment / Melinda)</a></p>
+                </div>
+              </div>
+
+              <!-- Detail 3: Plus Code from Screenshot -->
+              <div class="loc-detail-row">
+                <div class="loc-detail-icon"><i class="fa-solid fa-diamond-turn-right"></i></div>
+                <div class="loc-detail-content">
+                  <h5>Plus Code</h5>
+                  <p style="font-family: monospace; font-size: 1rem; color: var(--primary-gold-light);">9VHM+8P Phoenix, Arizona, USA</p>
+                </div>
+              </div>
+
+              <!-- Detail 4: Hours from Screenshot & Schedule -->
+              <div class="loc-detail-row" style="border-bottom: none; padding-bottom: 0;">
+                <div class="loc-detail-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="loc-detail-content" style="width: 100%;">
+                  <h5>Operating Hours</h5>
+                  <table class="hours-table">
+                    <tr id="hour-sun"><td>Sunday</td><td>Closed (VIP Appt Only)</td></tr>
+                    <tr id="hour-mon"><td>Monday</td><td>Closed</td></tr>
+                    <tr id="hour-tue"><td>Tuesday</td><td>9:00 AM – 6:00 PM</td></tr>
+                    <tr id="hour-wed"><td>Wednesday</td><td>9:00 AM – 6:00 PM</td></tr>
+                    <tr id="hour-thu"><td>Thursday</td><td>9:00 AM – 6:00 PM</td></tr>
+                    <tr id="hour-fri"><td>Friday</td><td>9:00 AM – 6:00 PM</td></tr>
+                    <tr id="hour-sat"><td>Saturday</td><td>9:00 AM – 5:00 PM</td></tr>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons Matching Google Maps UI in Screenshot -->
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+            <a href="https://maps.google.com/?q=2640+W+Baseline+Rd+%23105,+Phoenix,+AZ+85041" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              <span>Get Directions</span>
+            </a>
+            <button class="btn btn-secondary btn-sm" id="copyAddressBtn">
+              <i class="fa-solid fa-copy"></i>
+              <span>Copy Address</span>
+            </button>
+            <button class="btn btn-secondary btn-sm" id="shareBtn">
+              <i class="fa-solid fa-share-nodes"></i>
+              <span>Share Salon</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive Google Map Panel -->
+        <div class="map-container-panel">
+          <div class="map-overlay-badge">
+            <i class="fa-solid fa-location-dot" style="color: var(--primary-gold); font-size: 1.2rem;"></i>
+            <div class="map-badge-text">
+              <h6>Baseline Crossings Suite #105</h6>
+              <p>Phoenix, AZ 85041</p>
+            </div>
+          </div>
+          <!-- Embedded Google Map centered on 2640 W Baseline Rd #105, Phoenix AZ -->
+          <iframe 
+            src="https://maps.google.com/maps?q=2640%20W%20Baseline%20Rd%20%23105,%20Phoenix,%20AZ%2085041&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            title="Melinda's Style Boutique Hair Salon Google Maps Location"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FREQUENTLY ASKED QUESTIONS (ACCORDION)
+       =================================================================== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-circle-question"></i>
+          Got Questions?
+        </span>
+        <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+        <p class="section-subtitle">
+          Everything you need to know before visiting Melinda's Style Boutique Hair & Barber Salon.
+        </p>
+      </div>
+
+      <div class="faq-wrapper">
+        
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>Do I need to wash or detangle my hair before my appointment?</span>
+            <span class="faq-icon-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            For silk press and natural hair care services, a deep shampoo, scalp clarifying cleanse, and steam conditioning are included in your experience! For protective braiding styles, hair should be detangled and free of heavy oils or product buildup. If you need a pre-braid wash or takedown service, please mention it when booking.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you accept walk-ins or are appointments mandatory?</span>
+            <span class="faq-icon-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            We welcome walk-ins whenever chair availability allows! However, to guarantee you have no waiting time and have Melinda's undivided attention, we strongly recommend reserving your slot online or calling us at (602) 277-4960 prior to heading over.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is the salon wheelchair accessible?</span>
+            <span class="faq-icon-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            Yes! Melinda's Style Boutique is 100% wheelchair accessible with a zero-step entrance at Baseline Crossings LLC, wide corridors, and accessible styling stations and restrooms designed for all clients.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is hair included for knotless braids and protective styles?</span>
+            <span class="faq-icon-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            We provide standard hypoallergenic, pre-stretched braiding hair in popular natural colors (1, 1B, 2, 4). If you would like custom blended ombre or vivid fantasy colors, feel free to bring your favorite pack or consult with Melinda when scheduling.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What payment methods do you accept at the salon?</span>
+            <span class="faq-icon-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-answer">
+            We accept all major credit and debit cards (Visa, MasterCard, American Express, Discover), Apple Pay, Google Pay, Zelle, and Cash.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SOCIAL BANNER / INSTAGRAM SHOWCASE
+       =================================================================== -->
+  <section class="social-banner-section">
+    <div class="container">
+      <div class="social-inner-card">
+        <div class="social-text">
+          <span class="section-tag" style="background: rgba(226, 167, 146, 0.15); color: #e2a792; border-color: rgba(226, 167, 146, 0.3);">
+            <i class="fa-brands fa-instagram"></i> Follow Our Journey
+          </span>
+          <h3>Join The Style Boutique Community</h3>
+          <p>Catch fresh weekly transformations, haircare tips, and client spotlights on Instagram: <span class="handle">@melindasstylebtq</span></p>
+        </div>
+        <div class="social-actions">
+          <a href="https://www.instagram.com/melindasstylebtq/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Follow @melindasstylebtq</span>
+          </a>
+          <a href="https://www.facebook.com/p/Melindas-Style-Boutique-Hair-and-Barber-Salon-100057077692121/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <i class="fa-brands fa-facebook-f"></i>
+            <span>Facebook Page</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       MAIN FOOTER
+       =================================================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        
+        <!-- Brand Column -->
+        <div class="footer-col-brand">
+          <div class="brand-title">
+            <span class="script">Melinda's</span>
+            <span>Style Boutique</span>
+          </div>
+          <p>
+            Phoenix's home for elevated multicultural hair styling and barbering. Celebrating diversity, healthy hair wellness, and confident beauty for every client.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com/melindasstylebtq/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/p/Melindas-Style-Boutique-Hair-and-Barber-Salon-100057077692121/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://maps.google.com/?q=Melinda's+Style+Boutique+Hair+Salon+Phoenix+AZ" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Google Maps">
+              <i class="fa-brands fa-google"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#services">Services & Rates</a></li>
+            <li class="footer-link-item"><a href="#about">About Master Stylist Melinda</a></li>
+            <li class="footer-link-item"><a href="#gallery">Client Lookbook</a></li>
+            <li class="footer-link-item"><a href="#reviews">Google 4.9★ Reviews</a></li>
+            <li class="footer-link-item"><a href="#booking">Book Online</a></li>
+          </ul>
+        </div>
+
+        <!-- Salon Specialties -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Specialties</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#services">Silk Press & Blowout</a></li>
+            <li class="footer-link-item"><a href="#services">Knotless Box Braids</a></li>
+            <li class="footer-link-item"><a href="#services">Sew-in Extensions</a></li>
+            <li class="footer-link-item"><a href="#services">Barber Fades & Beard</a></li>
+            <li class="footer-link-item"><a href="#services">Scalp Steam Detox</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Location -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact & Visit</h4>
+          <div class="footer-contact-items">
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>2640 W Baseline Rd #105, Phoenix, AZ 85041 (Baseline Crossings LLC)</span>
+            </div>
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <span>Salon: <a href="tel:+16022774960" style="color: #fff; font-weight: 600;">(602) 277-4960</a></span>
+            </div>
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <span>Direct: <a href="tel:+16026927170" style="color: #fff; font-weight: 600;">(602) 692-7170</a></span>
+            </div>
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-hashtag"></i>
+              <span>Plus Code: 9VHM+8P Phoenix, AZ</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>© 2026 Melinda's Style Boutique Hair and Barber Salon. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <span>🤎 Black-Owned</span>
+          <span>💜 Women-Owned</span>
+          <span>🏳️‍🌈 LGBTQ+ Friendly</span>
+          <span>♿ Wheelchair Accessible</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       FLOATING CALL & BOOK DOCK
+       =================================================================== -->
+  <div class="floating-dock">
+    <a href="tel:+16022774960" class="floating-action-btn floating-call" title="Call Salon">
+      <i class="fa-solid fa-phone"></i>
+      <span>Call (602) 277-4960</span>
+    </a>
+    <a href="#booking" class="floating-action-btn floating-book" title="Book Salon">
+      <i class="fa-solid fa-calendar-check"></i>
+      <span>Book Now</span>
+    </a>
+  </div>
+
+  <!-- ===================================================================
+       IMAGE LIGHTBOX MODAL
+       =================================================================== -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+      <img id="lightboxImg" src="" alt="Transformation Preview">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       TOAST NOTIFICATION
+       =================================================================== -->
+  <div class="toast-msg" id="toastMsg">Notification</div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
